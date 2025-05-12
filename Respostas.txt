@@ -1,0 +1,13 @@
+11.
+A) Para todos os outros conectados ao hub, no caso do teste 5.
+B) Não, somente o PC que fora mencionado no comando de ping que recebe e aceita a solicitação.
+C) Todos os hots descartam a mensagem, exceto o que é mencionado pelo PC origem.
+D) Somente a máquina mencionada pelo PC origem envia uma resposta.
+E) Para todos.
+F) Não, somente o PC origem recebe.
+G) Todos descartam, exceto o PC origem.
+
+19.
+H) O hub age enviando a solicitação a todos os computadores conectados a ele simultâneamente, onde somente o PC mencionado no comando de ip aceita a solicitação. 
+O switch por sua vez envia somente para o PC mencionado no comando ping.
+I) As mensagens de STP usadas pelo switch são para informar caso haja algum loop no sistema.
