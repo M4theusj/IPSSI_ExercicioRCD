@@ -1,5 +1,5 @@
 11.
-A) Para todos os outros conectados ao hub, no caso do teste 5.
+A) Para todos os hosts conectados no hub.
 B) Não, somente o PC que fora mencionado no comando de ping que recebe e aceita a solicitação.
 C) Todos os hots descartam a mensagem, exceto o que é mencionado pelo PC origem.
 D) Somente a máquina mencionada pelo PC origem envia uma resposta.
