@@ -1,0 +1,100 @@
+13.
+PC0 = 200.1.0.100
+PC3 = 200.1.1.100
+PC6 = 200.1.2.100
+TTL = 128
+
+14. router0
+
+a) ip 200.1.0.1 → classe c
+b) ip 1.0.0.1 → classe a
+c) ip 3.0.0.1 → classe a
+
+15. router1
+
+a) ip 200.1.1.1 → classe c
+b) ip 3.0.0.2 → classe a
+c) ip 2.0.0.1 → classe a
+
+16. router2
+
+a) ip 200.1.2.1 → classe c
+b) ip 1.0.0.2 → classe a
+c) ip 2.0.0.2 → classe a
+
+18.
+ping 200.1.1.100 ttl = 128
+ping 200.1.2.100 ttl = 128
+
+20. Quais redes foram afetadas?
+200.1.0.100 (pc0) no pc6 e 200.1.2.100 (pc6) no pc0
+
+23. Configure o roteamento estático no Router1 usando o RIP
+A área Network Address deve exibir:
+Router1: (registre as rotas diretamente acessíveis)
+200.1.1.0
+3.0.0.0
+2.0.0.0
+
+24. Configure o roteamento estático no Router2 usando o RIP
+A área Network Address deve exibir:
+Router2: (registre as rotas diretamente acessíveis)
+1.0.0.0
+2.0.0.0
+200.1.2.0
+
+25. Teste a conexão entre as redes e compare com o verificado no teste do item 18
+Verifique a comunicação com os dispositivos das demais redes
+ping 200.1.1.102 (IP de PC3) – TTL = 126
+ping 200.1.2.102 (IP de PC6) – TTL = 126
+PC3: Verifique a comunicação com os dispositivos das demais redes
+ping 200.1.0.100 (IP de PC0) – TTL = 126
+ping 200.1.2.102 (IP de PC6) – TTL = 126
+PC6: Verifique a comunicação com os dispositivos das demais redes
+ping 200.1.0.100 (IP de PC0) – TTL = 126
+ping 200.1.1.102 (IP de PC3) – TTL = 126
+
+26. 
+a) Nenhuma rede teve perda de conexão, operaram do mesmo jeito.
+
+b) A troca de dados entre as redes é bloqueada, pois o roteamento estático não atualiza por conta própria. O responsável precisa alterar manualmente as rotas para restaurar o tráfego.
+
+c) Criar manualmente caminhos alternativos.Definir rotas de reserva com custo administrativo mais alto. Substituir o método estático por um protocolo de roteamento automático.
+
+d) O sistema de roteamento identifica a quebra e ajusta automaticamente para outro caminho, se possível. Isso permite restabelecimento ágil da comunicação sem ajustes manuais.
+
+e) DCE (Dispositivo de Comunicação de Dados) é o componente que fornece o sinal de sincronismo para ligações seriais.
+
+f) Define a taxa de transferência de dados em ligações seriais no lado DCE. Ele é fundamental para manter o sincronismo entre os pontos da conexão.
+
+g) TTL (Tempo de Vida) determina quantos roteadores o pacote pode atravessar antes de ser descartado.
+
+h) O comando tracert mostra o trajeto que os dados percorrem até o alvo, exibindo os roteadores intermediários. É usado para examinar a rota e eventuais falhas.
+
+i) 
+3 redes de PCs:
+200.1.0.0/24
+200.1.1.0/24
+200.1.2.0/24
+
+3 redes seriais:
+1.0.0.0/8
+2.0.0.0/8
+3.0.0.0/8
+Total: 6 redes
+
+k)
+200.1.0.0/24
+200.1.1.0/24
+200.1.2.0/24
+1.0.0.0/8
+2.0.0.0/8
+3.0.0.0/8
+
+l) Quais os endereços de broadcast de cada rede?
+200.1.0.0/24 → 200.1.0.255
+200.1.1.0/24 → 200.1.1.255
+200.1.2.0/24 → 200.1.2.255
+1.0.0.0/8 → 1.255.255.255
+2.0.0.0/8 → 2.255.255.255
+3.0.0.0/8 → 3.255.255.255
