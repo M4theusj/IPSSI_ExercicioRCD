@@ -1,0 +1,21 @@
+6. Sim, todas as máquinas conectadas ao switch respodem.
+
+8.
+a) sim, o ip pode mudar porque foi liberado e o servidor pode dar outro.
+b) o comando /release solta o ip que o pc estava usando.
+c) o comando /renew pede um novo ip para o servidor dhcp.
+e) sim, eles pegam ip se o servidor ainda tiver disponível.
+
+13. os novos pcs pegaram os ips que estavam livres, então quando os antigos tentaram renovar, 
+pode ter dado erro ou recebido ips diferentes. 
+isso acontece porque o servidor distribui os ips que estão disponíveis no momento.
+
+14. o dhcp serve para entregar ips automaticamente aos dispositivos da rede, 
+sem precisar configurar manualmente em cada um.
+
+21.
+f) sim, dois servidores dhcp podem atuar na mesma rede.
+
+g) a vantagem é que um servidor pode funcionar como reserva (backup) caso o outro pare, garantindo que os dispositivos continuem recebendo ip.
+
+h) é preciso dividir os intervalos de ip (faixas diferentes) para cada servidor, para evitar conflito de endereços. também é importante garantir que os dois servidores estejam bem configurados para não fornecerem o mesmo ip para dispositivos diferentes.
