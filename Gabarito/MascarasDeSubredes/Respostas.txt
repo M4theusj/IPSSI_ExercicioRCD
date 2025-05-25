@@ -1,0 +1,21 @@
+6 - Teste a conectividade do PC0 com as outras máquinas usando comando "ping". Quais máquinas respondem? Porque?
+	R: Todas as máquinas respondem pois o comando 255 serve para todas as máquinas.
+
+8 - Teste a conectividade do PC5 com as outras máquinas usando o comando "ping". Quais máquinas respondem? Porque?
+	R: Todas as máquinas respondem pois o comando 255 serve para todas as máquinas que possuem a mascara 24.
+
+9 - Responda:
+Qual a classe dessas redes? R: Classe C 
+Quantas redes temos configuradas? R:10
+Qual o endereço de cada rede? R: PC0 - 200.1.2.0, PC1 200.1.2.10, PC2 200.1.2.20, PC3 200.1.2.30, PC4 200.1.2.40, PC5 200.1.2.50, PC6 200.1.2.60, PC7 200.1.2.70, PC8 200.1.2.80, PC9 200.1.2.90.
+Qual o endereço broadcast de cada rede? Todos compartilham do mesmo endereço 200.1.2.255 .
+
+13 - Nenhuma máquina responde pois elas compartilham da mascara 26, e o comando 255 serve só para a 24.
+
+15 - Nenhuma máquina responde pois elas compartilham da mascara 26, e o comando 255 serve só para a 24.
+
+16 - Responda:
+Quantas redes temos cofiguradas? R: 10 
+Qual o endereço de cada rede? R: PC0 - 200.1.2.0, PC1 200.1.2.10, PC2 200.1.2.20, PC3 200.1.2.30, PC4 200.1.2.40, PC5 200.1.2.50, PC6 200.1.2.60, PC7 200.1.2.70, PC8 200.1.2.80, PC9 200.1.2.90.
+Qual o endereço broadcast de cada rede? R: Todos compartilham do mesmo endereço 200.1.2.192. 
+
