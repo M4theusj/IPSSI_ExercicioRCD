@@ -1,0 +1,3 @@
+a) ata é um adaptador que liga telefones comuns a redes voip, mudando o sinal analógico para digital.
+
+b) o custo da ligação pode cair quando a maior parte dela passa pela internet e só o final usa a rede telefônica normal. isso ajuda a economizar, principalmente em ligações longas ou internacionais.
