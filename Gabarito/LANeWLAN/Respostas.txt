@@ -1,0 +1,11 @@
+De onde vieram estas configurações?
+R: Do cluster 5, do server 5 
+
+a) o servidor dhcp é quem manda automaticamente o ip, a máscara de rede, o gateway e o dns para o computador.
+
+b) o roteador com dhcp ligado, que está conectado à rede wi-fi, foi quem mandou as configurações.
+
+c) o dns também é enviado automaticamente pelo dhcp junto com o ip e outras configurações.
+
+d) a internet usa endereços ip. por isso, o nome do site precisa virar um ip, e quem faz isso é o servidor dns.
+
