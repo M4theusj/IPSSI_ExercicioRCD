@@ -1,0 +1,41 @@
+3 - Todas as máquinas respondem
+
+5 - 
+PC0 → ping –n 1 172.17.255.255
+Resposta: Apenas os hosts da mesma VLAN de PC0 responderam ao ping. Os demais não responderam, pois o broadcast não atravessa VLANs.
+
+6 - 
+PC4 → ping –n 1 172.17.255.255
+Resposta: Apenas os hosts da mesma VLAN de PC4 responderam ao ping. Hosts de outras VLANs não responderam.
+
+7 - 
+PC8 → ping –n 1 172.17.255.255
+Resposta: Apenas os hosts da mesma VLAN de PC8 responderam ao ping. Não houve resposta de PCs de outras VLANs.
+
+8 - 
+- PC1 trocado com PC5 (FastEthernet0/2 ↔ FastEthernet0/6)
+- PC7 trocado com PC11 (FastEthernet0/8 ↔ FastEthernet0/12)
+
+9 - 
+Resposta: Após a troca de cabos, alguns PCs pararam de se comunicar com os da sua VLAN original. Isso ocorreu porque em VLANs estáticas, as portas definem a VLAN. Ao mudar a porta, o PC muda de VLAN e perde conectividade com seus antigos vizinhos de rede.
+
+11 - Responda:
+
+a) O que faz o comando “show vlan brief”?
+Resposta: Exibe todas as VLANs configuradas no switch, mostrando seus IDs, nomes e as interfaces associadas a cada uma.
+
+b) As portas f0/9, f0/10, f0/11 e f0/12 não foram alteradas. A qual VLAN elas ficaram associadas?
+Resposta: Permaneceram associadas à VLAN padrão (VLAN 1), a menos que tenham sido atribuídas manualmente a outra VLAN.
+
+c) Caso se mude a porta de conexão de um host que participa de uma VLAN estática, que cuidado deve ser tomado?
+Resposta: É necessário reconfigurar a nova porta para que ela pertença à mesma VLAN anterior, garantindo que o host continue se comunicando com os demais da sua VLAN.
+
+d) Quais vantagens podem ser encontradas com o uso de VLANs?
+Resposta: Segmentação lógica da rede, aumento da segurança, redução de broadcast, melhor gerenciamento da rede e isolamento de grupos de trabalho.
+
+e) Como você faria para trocar mensagens entre as VLANs?
+Resposta: É necessário usar um roteador ou um switch de camada 3 com roteamento entre VLANs habilitado (Router-on-a-Stick ou SVI).
+
+f) Neste exercício todos os hosts, das três VLANs, pertencem à mesma faixa de IP. É possível configurar um roteador para permitir conectividade entre as VLANs deste exercício? Por quê?
+Resposta: Não. Mesmo estando na mesma faixa de IP, os dispositivos estão separados logicamente por VLANs. Para haver comunicação entre elas, é necessário configurar subinterfaces no roteador com endereços IP diferentes e usar VLANs distintas com roteamento entre elas.
+
