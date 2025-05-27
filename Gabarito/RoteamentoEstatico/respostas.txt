@@ -1,0 +1,23 @@
+11 - No PC0 todas as máquinas respondem e o TTL = 120 
+		 No PC5 todas as máquinas respondem e o TTL = 120
+
+16 - TTL = 127 o tracert mostra o salto pelo roteador no primeiro salto 200.1.0.1 e no segundo salto 200.1.1.1
+		 
+19 Responda: 
+	a) Qual a função do roteador?
+	A função do roteador é interligar diferentes redes, encaminhar pacotes IP entre elas com base em uma tabela de roteamento, e determinar qual o melhor caminho para que os dados cheguem ao destino.
+
+	b) O que é um default gateway?
+	O default gateway é o endereço IP de um roteador dentro da rede local, que serve como ponto de saída para acesso a outras redes (incluindo a internet ou outras sub-redes). Todos os pacotes destinados a redes externas são enviados para ele.
+
+	c) O que acontece se não declararmos o default gateway em um PC?
+	O PC não conseguirá se comunicar com outras redes além da sua própria. Ele até conseguirá conversar com outros hosts da mesma sub-rede, mas não conseguirá acessar nenhum host fora dela.
+
+	d) Qual a principal desvantagem no uso do roteamento estático?
+	A maior desvantagem é a necessidade de configurar e atualizar as rotas manualmente. Em caso de falha ou mudança de topologia, o administrador precisa editar as rotas uma a uma, o que é inviável em redes grandes.
+
+	e) O que é domínio de difusão de uma rede?
+	É o conjunto de dispositivos que recebem uma mesma mensagem de broadcast (como ping 255.255.255.255). Cada roteador separa domínios de difusão, ou seja, broadcasts não passam por roteadores.
+
+
+
