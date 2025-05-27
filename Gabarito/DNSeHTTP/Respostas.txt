@@ -1,0 +1,121 @@
+7 - 
+ Rede 0 = 200.168.0.0  
+Server0 (IP) = 200.168.0.254  
+Default Gateway (IP) = 200.168.0.1 (Router0)
+
+ Rede 2 = 200.168.2.0  
+Server2 (IP) = 200.168.2.254  
+Default Gateway (IP) = 200.168.2.1 (Router2)
+
+ Rede 3 = 200.168.3.0  
+server3 (IP) = 200.168.3.254  
+Default Gateway (IP) = 200.168.3.1 (Router3)
+
+ Rede 5 = 200.168.5.0  
+Server5 (IP) = 200.168.5.254  
+Default Gateway (IP) = 200.168.5.1 (Router5)
+
+9 - PC0 IP = 200.168.5.1, todos as máquinas respondem, TTL = 120
+		PC3 IP = 200.168.0.2, todas as máquinas respondem, TTL = 120
+		PC6 IP = 200.168.3.2, todas as máquinas respondem, TTL = 120
+		PC9 IP = 200.168.2.2, todas as máquinas respondem, TTL = 120
+
+12 - Router 0			Router 1		Router 2		Router 3		Router 4		Router 5
+		1.0.0.0				1.0.0.0			200.1.0.0		200.1.0.0		200.1.0.0		200.1.0.0
+		6.0.0.0				2.0.0.0			200.1.1.0		200.1.1.0		200.1.1.0		200.1.1.0  
+		200.168.0.0		110.0.0.0		200.1.3.0		200.1.2.0		200.1.2.0		200.1.2.0
+
+13 - 
+PC0
+ping 110.0.0.110     TTL = 125
+tracert 110.0.0.110  Qtdd routers = 3
+
+ping 140.0.0.140     TTL = 124
+tracert 140.0.0.140  Qtdd routers = 4
+--------------------------------------------------
+
+PC3
+ping 110.0.0.110     TTL = 126
+tracert 110.0.0.110  Qtdd routers = 2
+
+ping 140.0.0.140     TTL = 125
+tracert 140.0.0.140  Qtdd routers = 3
+--------------------------------------------------
+
+PC6
+ping 110.0.0.110     TTL = 127
+tracert 110.0.0.110  Qtdd routers = 1
+
+ping 140.0.0.140     TTL = 126
+tracert 140.0.0.140  Qtdd routers = 2
+--------------------------------------------------
+
+PC9
+ping 110.0.0.110     TTL = 126
+tracert 110.0.0.110  Qtdd routers = 2
+
+ping 140.0.0.140     TTL = 127
+tracert 140.0.0.140  Qtdd routers = 1
+
+14 - 
+
+PC0
+ping 110.0.0.110     TTL = 124
+tracert 110.0.0.110  Qtdd routers = 4
+
+ping 140.0.0.140     TTL = 123
+tracert 140.0.0.140  Qtdd routers = 5
+--------------------------------------------------
+
+PC3
+ping 110.0.0.110     TTL = 125
+tracert 110.0.0.110  Qtdd routers = 3
+
+ping 140.0.0.140     TTL = 124
+tracert 140.0.0.140  Qtdd routers = 4
+--------------------------------------------------
+
+PC6
+ping 110.0.0.110     TTL = 127
+tracert 110.0.0.110  Qtdd routers = 1
+
+ping 140.0.0.140     TTL = 126
+tracert 140.0.0.140  Qtdd routers = 2
+--------------------------------------------------
+
+PC9
+ping 110.0.0.110     TTL = 126
+tracert 110.0.0.110  Qtdd routers = 2
+
+ping 140.0.0.140     TTL = 127
+tracert 140.0.0.140  Qtdd routers = 1
+
+A diferença entre as duas tabelas está no caminho que os pacotes percorrem até chegar aos servidores. Antes da remoção da conexão entre o Router0 e o Router1 (rede 1.0.0.0), o roteamento dinâmico (RIP) utilizava o caminho mais curto possível, fazendo com que os pacotes passassem por menos roteadores, resultando em valores de TTL mais altos e menor número de saltos (routers) nos testes com o tracert. Após a remoção dessa conexão, o RIP atualizou automaticamente as rotas e passou a utilizar caminhos alternativos, o que aumentou a quantidade de roteadores intermediários entre os PCs e os servidores. Isso fez com que o TTL diminuísse e o número de saltos aumentasse. Essa diferença evidencia a principal vantagem do roteamento dinâmico: a capacidade de se adaptar a mudanças na topologia da rede sem necessidade de reconfiguração manual.
+
+22 - 
+a) O que ocorre, diante de uma falha em um link de backbone, no uso do roteamento dinâmico?
+O protocolo de roteamento dinâmico (como o RIP) detecta automaticamente a falha e recalcula as rotas disponíveis, buscando caminhos alternativos para manter a comunicação entre as redes sem necessidade de intervenção manual.
+
+b) O que representa o TTL apresentado na resposta do comando “ping”?
+O TTL (Time To Live) indica a quantidade máxima de roteadores (saltos) que o pacote pode atravessar antes de ser descartado. A cada roteador atravessado, o TTL é reduzido em 1. Ele também ajuda a detectar quantos roteadores estão no caminho até o destino.
+
+c) O que faz o comando “tracert”?
+O comando tracert mostra o caminho percorrido pelo pacote até o destino, listando os roteadores intermediários (saltos) e o tempo que cada um levou para responder.
+
+d) O que faz o serviço HTTP?
+O serviço HTTP (Hypertext Transfer Protocol) permite o acesso a páginas web. Ele é responsável pela transferência de arquivos HTML e outros conteúdos via navegador entre clientes e servidores web.
+
+e) O que faz o serviço DNS?
+O serviço DNS (Domain Name System) converte nomes de domínio (como www.exemplo.com) em endereços IP, permitindo que usuários acessem sites e serviços pela URL em vez de memorizar IPs numéricos.
+
+f) Neste exercício, quantas redes foram configuradas?
+Foram configuradas 6 redes, correspondendo às sub-redes conectadas aos roteadores e aos servidores.
+
+g) Quais os endereços de cada rede?
+- Rede 0: 200.168.0.0
+- Rede 2: 200.168.2.0
+- Rede 3: 200.168.3.0
+- Rede 5: 200.168.5.0
+- Rede 110: 110.0.0.0
+- Rede 140: 140.0.0.0
+
